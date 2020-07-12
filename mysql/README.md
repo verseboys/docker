@@ -163,3 +163,47 @@ a781d1c74024        mysql:latest        "/run.sh"           About a minute ago  
 ```
 现在，你就可以通过相应的端口来连接主或者从 mysql 服务器了。
 `
+
+
+
+
+
+
+//verse
+
+[root@iZm5eftzomp391db2l1rj2Z docker]# cd centos_ssh_file
+[root@iZm5eftzomp391db2l1rj2Z centos_ssh_file]# ls
+authorized_keys  Dockerfile  id_rsa  id_rsa.pub  run.sh
+[root@iZm5eftzomp391db2l1rj2Z centos_ssh_file]# docker build -t  sshd:dockerfile .
+
+sudo  docker run -d -p   10122:22 sshd:dockerfile
+
+
+[root@iZm5eftzomp391db2l1rj2Z docker]# cd mysql
+[root@iZm5eftzomp391db2l1rj2Z mysql]# docker build -t  mysql:dockerfile .
+
+----------
+使用执行
+
+
+
+service  docker start
+
+ docker exec -it suspicious_lewin /bin/bash
+
+ vi /etc/ssh/sshd_config
+
+sudo docker build -t  sshd:dockerfile .
+
+ssh 127.0.0.1 -p 10122
+mysql -uroot -p
+
+mysql -h 127.0.0.1 -P 3306 -u root -p
+
+docker build -t  mysql:dockerfile .
+
+----------
+###进入容器操作
+docker exec -it vibrant_davinci（容器名） /bin/bash
+
+sudo docker run -d -P mysql:dockerfile
