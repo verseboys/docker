@@ -168,7 +168,7 @@ services:
     hostname: sentinel
     container_name: sentinel
     ports:
-      - "8700:8080"
+      - "8700:8280"
     environment:
       JAVA_OPTS: "-Xmx256m -Xms256m"
     volumes:

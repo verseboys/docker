@@ -10,7 +10,7 @@ rocketmq
 rabbitmq
 
 ```shell
-cd docker
+cd docker-nacos-sentinel-rocketmq-rabbitmq
 
 docker-compose up
 
