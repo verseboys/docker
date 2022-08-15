@@ -16,7 +16,7 @@ docker-compose up
 
 ```
 
-# mysql 数据库 默认用户名和密码
+# mysql 数据库 默认用户名和密码(单机，并且没有远程权限的-    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;)
 
 账号/密码：root/root
 

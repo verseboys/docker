@@ -2,3 +2,4 @@
 /docker-nacos-sentinel-rocketmq-rabbitmq/mysql-slave
 /docker-nacos-sentinel-rocketmq-rabbitmq/sentinel/logs
 /docker-nacos-sentinel-rocketmq-rabbitmq/standalone-logs
+/docker-nacos-sentinel-rocketmq-rabbitmq/mysql/data

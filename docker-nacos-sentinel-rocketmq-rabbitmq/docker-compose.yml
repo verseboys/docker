@@ -22,14 +22,16 @@ services:
       build: ./mysql
       hostname: mysql
       container_name: mysql
+      #权限 新建文件夹
+      privileged: true
       ports:
         - "3306:3306"
       environment:
         MYSQL_ROOT_PASSWORD: root
       volumes:
-        - /tmp/:/tmp/
+        - ./tmp/:/tmp/
       # 关闭，如有需要，请自行开启，但是必须要删除 ./mysql/data 的 README.md 文件，否则报错
-      #  - ./mysql/data:/var/lib/mysql
+        - ./mysql/data:/var/lib/mysql
       networks:
                   nsrr:
                       aliases:
@@ -78,11 +80,16 @@ services:
       - SPRING_DATASOURCE_PLATFORM=mysql
       - MYSQL_MASTER_SERVICE_HOST=mysql-master
       - MYSQL_MASTER_SERVICE_DB_NAME=nacos_devtest
-      - MYSQL_MASTER_SERVICE_PORT=3306
+      - MYSQL_MASTER_SERVICE_PORT=3304
+      - MYSQL_SERVICE_HOST=mysql-master
+      - MYSQL_SERVICE_DB_NAME=nacos_devtest
+      - MYSQL_SERVICE_PORT=3304
       - MYSQL_SLAVE_SERVICE_HOST=mysql-slave
-      - MYSQL_SLAVE_SERVICE_PORT=3306
+      - MYSQL_SLAVE_SERVICE_PORT=3305
       - MYSQL_MASTER_SERVICE_USER=nacos
       - MYSQL_MASTER_SERVICE_PASSWORD=nacos
+      - MYSQL_SERVICE_USER=nacos
+      - MYSQL_SERVICE_PASSWORD=nacos
       - JAVA_OPTS=-Xmx256m -Xms256m
     volumes:
       - ./standalone-logs/:/home/nacos/logs
