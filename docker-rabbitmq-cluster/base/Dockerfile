@@ -16,8 +16,8 @@ RUN yum install -y  https://github.com/rabbitmq/rabbitmq-server/releases/downloa
 
 RUN /usr/sbin/rabbitmq-plugins list <<<'y'
 
+#安装延时队列插件
 
-
-RUN /usr/sbin/rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_stomp rabbitmq_management  rabbitmq_management_agent rabbitmq_federation rabbitmq_federation_management <<<'y'
+RUN /usr/sbin/rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_stomp rabbitmq_management  rabbitmq_management_agent rabbitmq_delayed_message_exchange rabbitmq_federation rabbitmq_federation_management <<<'y'
 
 #CMD /usr/sbin/rabbitmq-server
