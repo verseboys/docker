@@ -2,6 +2,10 @@
 
 docker build -t dubbo-admin:1.0 .
 
+
+再执行
+docker-compose up -d 
+
 ## 启动 ##
 docker-compose up
 #查看时候有异常抛出，检查配置中心地址指向是否正确，如果没有错误,结束服务
