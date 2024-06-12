@@ -13,6 +13,8 @@ docker-compose up -d #后台运行
 检查
 http://IP:7001 登录 系统管理 系统状态 是否正常
 
+账号 root 密码:root
+
 作者：额嗬
 链接：https://www.jianshu.com/p/5314cae6aaca
 来源：简书
